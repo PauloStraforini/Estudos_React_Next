@@ -11,7 +11,7 @@ export default function Filho (props: FilhoProps) {
         <div className={`flex flex-col justify-center items-center bg-blue-500 
             border border-white rounded-md p-5`}>
 
-            <div className="flex justify-center items-center gap-3 ">
+            <div className="flex justify-center items-center gap-3 p-5 ">
                 <span className="font-black">Filho</span>
 
                 <div>
