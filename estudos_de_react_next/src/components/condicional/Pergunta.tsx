@@ -15,7 +15,7 @@ export default function Pergunta (props: PerguntaProps) {
             className=" bg-blue-400 p-5"
             onClick={() => setAberta (!aberta)}
             >
-                {props.pergunta} 
+                <span>{props.pergunta}</span>
             </div>
 
             {/* {aberta ? "Sim" : "Não"} */}
