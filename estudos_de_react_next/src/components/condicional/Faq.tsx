@@ -10,7 +10,7 @@ export default function Faq() {
         } else {
             setAtivo(indice); // Abre a nova pergunta
         }
-    }
+    } 
 
     return (
         <div className="flex flex-col gap-4 md:w-3/5 w-[90%]">
