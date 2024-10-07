@@ -1,0 +1,1 @@
+import ItemCarrinho from '@/model/Carrinho';
