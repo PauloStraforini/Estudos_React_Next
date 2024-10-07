@@ -1,7 +1,6 @@
-export default interface Carrinho {
-    produtos: Produto[]
-    adicionar(produto: Produto): void
-    remover(produto: Produto): void
-    esvaziar(): void
-    total(): number
+import Produto from './Produto'
+
+export default interface ItemCarrinho {
+    produto: Produto
+    quantidade: number
 }
