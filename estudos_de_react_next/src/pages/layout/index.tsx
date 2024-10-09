@@ -4,7 +4,7 @@ export default function PaginaLayout() {
     return (
         <div className="flex justify-center items-center h-screen">
             <div className="w-[90%] lg:w-4/5">
-        <Grid sm={2} md={4}  lg={8}>
+        <Grid sm={2} md={4} lg={8}>
             <div className="h-24 w-full bg-purple-600">#1</div>
             <div className="h-24 w-full bg-rose-600">#2</div>
             <div className="h-24 w-full bg-blue-600">#3</div>
