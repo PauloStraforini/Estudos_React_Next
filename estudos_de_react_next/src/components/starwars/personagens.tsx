@@ -1,4 +1,9 @@
+import useProcessando from '@/hooks/useProcessando';
+import { useState } from 'react';
+
 export default function Personagens() {
+
+    const { processando, iniciarProcessamento, finalizarProcessamento } = useProcessando()
 
     async function SimularCamadaAPI() {
         return new Promise((resolve) => {
@@ -11,16 +16,27 @@ export default function Personagens() {
     }
 
     async function obterPersonagens() {
-        console.log('Início da função obterPersonagens')
-        await SimularCamadaAPI()
-        console.log('Fim da função obterPersonagens')
+        try {
+            iniciarProcessamento()
+            await SimularCamadaAPI()
+            
+        }
+
+        finally {
+            finalizarProcessamento()
+        }
     }
 
     return (
         <div className={`flex justify-center items-center h-screen`}>
-            <h1 className="text-3xl text-center">Personagens</h1>
+            {processando ? (
+                <div>Processando...</div>
+            ): (
+                <h1>Conteudo com Personagens</h1>
+            )}
+            
             <button onClick={obterPersonagens} className={`
-                bg-blue-500 p-2`}>obter</button>
+                bg-blue-500 p-2`}>obter</button>        
         </div>
     )
-} 
+}
