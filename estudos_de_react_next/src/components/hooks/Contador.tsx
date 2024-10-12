@@ -1,16 +1,16 @@
-import { use, useEffect, useState } from "react";
+import { use, useCallback, useEffect, useState } from "react";
 
 export default function Contador() {
     const [delta, setDelta] = useState(1);
     const [valor, setValor] = useState(0);
     const  [mult10, setMult10] = useState(0);
 
-    function CalcularValorMult10()  {
+    const CalcularValorMult10 = useCallback ((valor: number) => {
         return valor * 10
-    }
+    }, [valor])
 
     useEffect(() => {
-       const mult10 = CalcularValorMult10()
+       const mult10 = CalcularValorMult10(valor)
        setMult10 (mult10)
     }, [valor, CalcularValorMult10])
 
